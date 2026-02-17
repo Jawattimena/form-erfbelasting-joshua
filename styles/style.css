@@ -1,13 +1,84 @@
+:root {
+  /* colors:-------------------------------------- */
+
+  /* values:-------------------------------------- */
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  /* transition: all 0.3s ease-in-out; */
   font-family: poppins, sans-serif;
   margin: 0em;
   padding: 0em;
 }
 
+form {
+  margin: 1em;
+}
+
+fieldset {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: em;
+}
+
+legend {
+  padding: 1em;
+}
+
+/* Text input styling:--------------------------------------  */
+
+.text-input {
+  position: relative;
+  padding: 1em 0em;
+  width: auto;
+}
+
+.text-input label {
+  position: absolute;
+  align-self: center;
+  left: 0.7em;
+  color: gray;
+  transform: translateY(0%);
+}
+
+.text-input input {
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  border: solid black 2px;
+  width: 20em;
+  font-size: 1em;
+}
+
+.text-input label:hover {
+  cursor: text;
+}
+
+input:focus {
+  outline: none;
+}
+
+.text-input input:focus + label,
+.text-input input:not(:placeholder-shown) + label {
+  box-sizing: border-box;
+
+  left: 0.5em;
+  transform: translateY(-100%);
+
+  padding: 0em 0.5em;
+
+  color: black;
+  background-color: white;
+
+  font-size: 0.8em;
+  transition: all 0.2s ease-in-out;
+}
+
+/* van af hier moet opruimen.----------------------------------------------------------------- */
+
+/* 
 form {
   margin: 1em;
   position: relative;
@@ -61,7 +132,7 @@ input {
 fieldset {
   position: relative;
   height: 20vh;
-}
+} */
 
 /* Styling text input ---------------------------------------- */
 /* 

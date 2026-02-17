@@ -8,15 +8,131 @@
   </head>
   <body>
     <form action="">
-      <fieldset class="text-input">
+      <fieldset id="questions-1a">
         <legend>gegevens van de overledenen</legend>
-        <input
-          placeholder=""
-          type="text"
-          name="voorletter(s)"
-          id="voorletter(s)"
-        />
-        <label for="voorletter(s)">voorletter(s)</label>
+
+        <div class="text-input">
+          <input id="voorletter(s)" type="text" name="voorletter(s)" placeholder="" />
+          <label for="voorletter(s)">Voorletter(s)</label>
+        </div>
+
+        <div class="text-input">
+          <input id="Tussenvoegsel(s)" type="text" name="Tussenvoegsel(s)" placeholder="" />
+          <label for="Tussenvoegsel(s)">Tussenvoegsel(s)</label>
+        </div>
+
+        <div class="text-input">
+          <input id="Achternaam" type="text" name="Achternaam" placeholder="" />
+          <label for="Achternaam">Achternaam</label>
+        </div>
+
+        <input id="BSN-Overledenen" type="number" name="BSN overledenen" minlength="9" maxlength="9" placeholder="" />
+        <label for="BSN-Overledenen">BSN overledenen</label>
+
+        <input id="Overleidings-Datum"" type="date" name="Overleidings datum" value="2026-02-17" min="2024-8-01" max="2026-02-17" />
+        <label for="Overleidings-Datum">Overleidings datum</label>
+      </fieldset>
+
+      <fieldset id="questions-1b">
+        <fieldset>
+          <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+
+          <label for="radioGroup1">Nee, ga verder naar 1C </label>
+          <input type="radio" name="radioGroup1" value="nee" />
+
+          <label for="radioGroup1">ja</label>
+          <input type="radio" name="radioGroup1" value="ja" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+
+          <label for="radioGroup2">Nee. Ga verder met vraag 1c.</label>
+          <input type="radio" name="radioGroup2" value="nee" />
+
+          <label for="radioGroup2">Ja. Stuur een kopie van de akte mee met de aangifte.</label>
+          <input type="radio" name="radioGroup2" value="ja" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
+
+          <label for="radioGroup3">Nee</label>
+          <input type="radio" name="radioGroup3" value="nee" />
+
+          <label for="radioGroup3">Ja</label>
+          <input type="radio" name="radioGroup3" value="ja" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Datum huwelijkse of partnerschapsvoorwaarden</legend>
+
+          <input type="date" name="getrouwdOfPartner" value="nee" />
+        </fieldset>
+      </fieldset>
+
+      <fieldset id="questions-1c">
+        <fieldset>
+          <legend>Had de overledene kinderen?</legend>
+
+          <label for="radioGroup4">Nee. Ga verder met vraag 1d. </label>
+          <input type="radio" name="radioGroup4" value="nee" />
+
+          <label for="radioGroup4">ja</label>
+          <input type="radio" name="radioGroup4" value="ja" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
+
+          <label for="radioGroup5">Nee. Ga verder met vraag 1d..</label>
+          <input type="radio" name="radioGroup5" value="nee" />
+
+          <label for="radioGroup5">Ja</label>
+          <input type="radio" name="radioGroup5" value="ja" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Had dit overleden kind zelf kinderen?</legend>
+
+          <label for="radioGroup6">Nee</label>
+          <input type="radio" name="radioGroup6" value="nee" />
+
+          <label for="radioGroup6">Ja</label>
+          <input type="radio" name="radioGroup6" value="ja" />
+        </fieldset>
+      </fieldset>
+
+      <fieldset id="questions-1d">
+        <fieldset>
+          <legend>Had de overledene een testament?</legend>
+
+          <label for="radioGroup7">Nee. Ga verder met vraag 2.</label>
+          <input type="radio" name="radioGroup7" value="nee" />
+
+          <label for="radioGroup7">ja. Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.</label>
+          <input type="radio" name="radioGroup7" value="ja" />
+        </fieldset>
+
+        <fieldset>
+          <label for="radioGroup7">Protocolnummer notaris</label>
+          <input type="radio" name="radioGroup7" value="nee" />
+
+          <label for="voorletter(s)">voorletter(s)</label>
+          <input type="text" name="voorletter(s)" placeholder="" />
+
+          <label for="Tussenvoegsel(s)">Tussenvoegsel(s)</label>
+          <input type="text" name="Tussenvoegsel(s)" placeholder="" />
+
+          <label for="Achternaam">Achternaam</label>
+          <input type="text" name="Achternaam" placeholder="" />
+
+          <label for="Vestigingsplaats">Vestigingsplaats</label>
+          <input type="text" name="Vestigingsplaats" placeholder="" />
+
+          <label for="Vestigingsplaats">Datum van het testament of van de laatste wijziging</label>
+          <input type="date" name="Vestigingsplaats" placeholder="" />
+        </fieldset>
       </fieldset>
     </form>
   </body>
