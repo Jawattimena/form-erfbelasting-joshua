@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* transition: all 0.3s ease-in-out; */
+  font-family: poppins, sans-serif;
+  margin: 0em;
+  padding: 0em;
+}
+
+form {
+  margin: 1em;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+fieldset {
+  height: auto;
+  width: 100vw;
+
+  position: relative;
+}
+
+fieldset label {
+  position: absolute;
+  left: 0.4em;
+  top: 10%;
+
+  transform: translateY(-50%);
+
+  color: grey;
+
+  transition: all 0.3s ease-in-out;
+}
+
+fieldset input:focus + label,
+fieldset input:not(:placeholder-shown) + label {
+  left: 0px;
+  top: 0;
+  padding: 0em 0em;
+  color: black;
+  background-color: white;
+  font-size: 0.8em;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+input {
+  appearance: none;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0em;
+  padding: 0.5em 0.5em;
+}
+
+fieldset {
+  position: relative;
+  height: 20vh;
+}
+
+/* Styling text input ---------------------------------------- */
+/* 
+.text-input {
+  position: absolute;
+  margin: 2em;
+  z-index: 111;
+}
+
+fieldset .text-input input {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  appearance: none;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 0em;
+
+  padding: 0.5em 0.5em;
+  display: block;
+  height: inherit;
+  background-color: transparent;
+}
+
+.text-input:focus + .text-input input,
+.text-input:not(:placeholder-shown) + .text-input input {
+  transform: translateY(+50%);
+
+  padding: 0em 0em;
+  color: black;
+  font-size: 0.8em;
+}
+
+.text-input input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid blue;
+  transition: all 0.3s ease-in-out;
+} */
