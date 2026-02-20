@@ -7,33 +7,37 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <p>Dit is een school project!</p>
     <form action="">
       <fieldset id="questions-1a">
         <legend>gegevens van de overledenen</legend>
 
-        <div class="text-input">
-          <input id="voorletter(s)" type="text" name="voorletter(s)" placeholder="" />
-          <label for="voorletter(s)">Voorletter(s)</label>
+        <div>
+          <div class="text-input">
+            <input id="voorletter(s)" type="text" name="voorletter(s)" placeholder="" />
+            <label for="voorletter(s)">Voorletter(s)</label>
+          </div>
+
+          <div class="text-input">
+            <label for="Tussenvoegsel(s)">Tussenvoegsel(s)</label>
+            <input id="Tussenvoegsel(s)" type="text" name="Tussenvoegsel(s)" placeholder="" />
+          </div>
+
+          <div class="text-input">
+            <label for="Achternaam">Achternaam</label>
+            <input id="Achternaam" type="text" name="Achternaam" placeholder="" />
+          </div>
         </div>
 
-        <div class="text-input">
-          <input id="Tussenvoegsel(s)" type="text" name="Tussenvoegsel(s)" placeholder="" />
-          <label for="Tussenvoegsel(s)">Tussenvoegsel(s)</label>
-        </div>
-
-        <div class="text-input">
-          <input id="Achternaam" type="text" name="Achternaam" placeholder="" />
-          <label for="Achternaam">Achternaam</label>
-        </div>
-
-        <input id="BSN-Overledenen" type="number" name="BSN overledenen" minlength="9" maxlength="9" placeholder="" />
         <label for="BSN-Overledenen">BSN overledenen</label>
+        <input id="BSN-Overledenen" name="BSN overledenen" minlength="9" maxlength="9" placeholder="" />
 
-        <input id="Overleidings-Datum"" type="date" name="Overleidings datum" value="2026-02-17" min="2024-8-01" max="2026-02-17" />
         <label for="Overleidings-Datum">Overleidings datum</label>
+        <input id="Overleidings-Datum"" type="date" name="Overleidings datum" value="2026-02-17" min="2024-8-01" max="2026-02-17" />
       </fieldset>
 
       <fieldset id="questions-1b">
+        <legend>De huwelijkse staat van de overledenen</legend>
         <fieldset>
           <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
 
@@ -72,6 +76,7 @@
       </fieldset>
 
       <fieldset id="questions-1c">
+        <legend>vragen over de kinderen van de overledenen</legend>
         <fieldset>
           <legend>Had de overledene kinderen?</legend>
 
@@ -118,8 +123,10 @@
           <label for="radioGroup7">Protocolnummer notaris</label>
           <input type="radio" name="radioGroup7" value="nee" />
 
-          <label for="voorletter(s)">voorletter(s)</label>
-          <input type="text" name="voorletter(s)" placeholder="" />
+          <div class="text-input">
+            <label for="voorletter(s)">voorletter(s)</label>
+            <input type="text" name="voorletter(s)" placeholder="" />
+          </div>
 
           <label for="Tussenvoegsel(s)">Tussenvoegsel(s)</label>
           <input type="text" name="Tussenvoegsel(s)" placeholder="" />

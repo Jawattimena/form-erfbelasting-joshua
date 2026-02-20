@@ -1,5 +1,27 @@
+@font-face {
+  font-family: "NS-font-regular";
+  src: url(/fonts/nssans-regular.woff2);
+}
+
+@font-face {
+  font-family: "NS-font-bold";
+  src: url(/fonts/nssans-bold.woff2);
+}
+
+@font-face {
+  font-family: "NS-font-italic";
+  src: url(/fonts/nssans-italic.woff2);
+}
+@font-face {
+  font-family: "NS-font-bolditalic";
+  src: url(/fonts/nssans-bolditalic.woff2);
+}
+
 :root {
   /* colors:-------------------------------------- */
+  --NS-yellow: #ffc917;
+  --NS-blue-and-links: #0063d3;
+  --NS-text-color: #003082;
 
   /* values:-------------------------------------- */
 }
@@ -8,9 +30,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: poppins, sans-serif;
+  font-family: "NS-font-regular";
   margin: 0em;
   padding: 0em;
+}
+
+body {
+  background-color: var(--NS-yellow);
 }
 
 form {
@@ -18,14 +44,36 @@ form {
 }
 
 fieldset {
-  padding: 1em;
+  padding: 2em;
+  margin: 1em;
   display: flex;
   flex-direction: column;
-  gap: em;
+  background-color: white;
+  border-radius: 1em;
+  border: none;
 }
 
 legend {
+  box-sizing: border-box;
+  padding: 0em;
+  width: 100%;
+  background-color: white;
+}
+
+p {
   padding: 1em;
+  font-family: "NS-font-bold";
+  color: white;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.questions-1a div {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 }
 
 /* Text input styling:--------------------------------------  */
@@ -33,7 +81,7 @@ legend {
 .text-input {
   position: relative;
   padding: 1em 0em;
-  width: auto;
+  width: fit-content;
 }
 
 .text-input label {
@@ -45,9 +93,9 @@ legend {
 }
 
 .text-input input {
-  padding: 0.5em 1em;
+  padding: 0.7em 1em;
   border-radius: 0.5em;
-  border: solid black 2px;
+  border: solid lightgray 1px;
   width: 20em;
   font-size: 1em;
 }
@@ -56,20 +104,23 @@ legend {
   cursor: text;
 }
 
+/* HIER HEB IKK DE BLAUWE OUTLINE VERWIJDERD WANNEER DIE FOCUS HEEFT.-------- */
+
 input:focus {
   outline: none;
+  border: solid var(--NS-blue-and-links) 1px;
 }
 
-.text-input input:focus + label,
-.text-input input:not(:placeholder-shown) + label {
-  box-sizing: border-box;
+/* DIT IS DE STATE NA DE ANIMIE---------------------------------------------- */
 
+.text-input:has(input:focus) label,
+.text-input:has(input:not(:placeholder-shown)) label {
   left: 0.5em;
-  transform: translateY(-100%);
+  transform: translateY(-145%);
 
   padding: 0em 0.5em;
 
-  color: black;
+  color: var(--NS-blue-and-links);
   background-color: white;
 
   font-size: 0.8em;
