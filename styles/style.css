@@ -1,20 +1,20 @@
 @font-face {
-  font-family: "NS-font-regular";
   src: url(/fonts/nssans-regular.woff2);
+  font-family: "NS-font-regular";
 }
 
 @font-face {
-  font-family: "NS-font-bold";
   src: url(/fonts/nssans-bold.woff2);
+  font-family: "NS-font-bold";
 }
 
 @font-face {
-  font-family: "NS-font-italic";
   src: url(/fonts/nssans-italic.woff2);
+  font-family: "NS-font-italic";
 }
 @font-face {
-  font-family: "NS-font-bolditalic";
   src: url(/fonts/nssans-bolditalic.woff2);
+  font-family: "NS-font-bolditalic";
 }
 
 :root {
@@ -22,7 +22,14 @@
   --NS-yellow: #ffc917;
   --NS-blue-and-links: #0063d3;
   --NS-text-color: #003082;
-
+  --NS-color-hover: #e0ecff;
+  --BG-fieldset-wit: #ffffff;
+  --BG-page-gray: #e6e6e9;
+  --border-gray: #d3d3d3;
+  --text-gray: #808080;
+  --text-color: #000000;
+  --valid-bordrer: #008000;
+  --valid-fill: #e6ffe6;
   /* values:-------------------------------------- */
 }
 
@@ -30,73 +37,117 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: "NS-font-regular";
   margin: 0em;
   padding: 0em;
+  font-family: "NS-font-regular";
+  line-height: 1.5em;
 }
 
-body {
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 40vh;
   background-color: var(--NS-yellow);
 }
 
+body {
+  background-color: var(--BG-page-gray);
+}
+
+h1 {
+  margin: 1.5em;
+  font-size: 2.2em;
+  font-family: "NS-font-regular";
+  color: var(--NS-text-color);
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 1em;
+  background-color: red;
+  font-family: "NS-font-bold";
+  color: white;
+}
+
 form {
-  margin: 1em;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin: -15em 0em 0em 1em;
 }
 
 fieldset {
-  padding: 2em;
-  margin: 1em;
   display: flex;
   flex-direction: column;
-  background-color: white;
-  border-radius: 1em;
+  gap: 1em;
+  background-color: var(--BG-fieldset-wit);
   border: none;
+  border-radius: 1em;
 }
 
 legend {
   box-sizing: border-box;
-  padding: 0em;
   width: 100%;
-  background-color: white;
+  margin: 1em 0em 1em 0em;
+  background-color: var(--BG-fieldset-wit);
+  font-family: "NS-font-regular";
+  color: #003082;
 }
 
-p {
-  padding: 1em;
-  font-family: "NS-font-bold";
-  color: white;
-  background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* dit zijn de white boxes */
+form > div {
+  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.1);
+  width: 80vw;
+  background-color: var(--BG-fieldset-wit);
+  border-radius: 1em;
 }
 
-.questions-1a div {
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
+form > div > fieldset {
+  padding: 0em 2em 2em 2em;
+  gap: 2em;
+}
+
+/* de > sellecteert alleen de eerste kinderen van de parent, dus in dit geval de eerste legend van elk fieldset. */
+form > div > fieldset > legend {
+  padding: 1.3em 0em 0.5em 0em;
+  font-size: 1.3em;
+  font-family: "NS-font-regular";
+  color: var(--NS-text-color);
 }
 
 /* Text input styling:--------------------------------------  */
+div:has(.text-input) {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
 
 .text-input {
   position: relative;
-  padding: 1em 0em;
-  width: fit-content;
+  padding: 0em 0em;
 }
 
 .text-input label {
-  position: absolute;
   align-self: center;
+  position: absolute;
   left: 0.7em;
-  color: gray;
   transform: translateY(0%);
+  color: var(--text-gray);
 }
 
 .text-input input {
+  width: 100%;
   padding: 0.7em 1em;
+  border: solid var(--border-gray) 1px;
   border-radius: 0.5em;
-  border: solid lightgray 1px;
-  width: 20em;
   font-size: 1em;
 }
 
@@ -108,119 +159,166 @@ p {
 
 input:focus {
   outline: none;
-  border: solid var(--NS-blue-and-links) 1px;
+  border: solid var(--NS-text-color) 1px;
 }
 
-/* DIT IS DE STATE NA DE ANIMIE---------------------------------------------- */
+/* DIT IS DE STATE NA DE ANIMIE VAN DE INPUT---------------------------------------------- */
 
 .text-input:has(input:focus) label,
 .text-input:has(input:not(:placeholder-shown)) label {
   left: 0.5em;
-  transform: translateY(-145%);
-
+  transform: translateY(-130%);
   padding: 0em 0.5em;
-
-  color: var(--NS-blue-and-links);
-  background-color: white;
-
-  font-size: 0.8em;
   transition: all 0.2s ease-in-out;
+  background-color: var(--BG-fieldset-wit);
+  font-size: 0.8em;
+  color: var(--NS-text-color);
 }
 
-/* van af hier moet opruimen.----------------------------------------------------------------- */
+/* textinput validation styling---------------------------------------------- */
 
-/* 
-form {
-  margin: 1em;
-  position: relative;
+.text-input input:user-valid {
+  outline: 2px solid var(--valid-bordrer);
+  border: var(--BG-fieldset-wit) solid 1px;
+  background-color: var(--valid-fill);
+  color: var(--text-color);
+  transition: 0.2s ease-in-out;
+}
+
+/* .text-input:has(input:user-valid) input {
+  outline: 2px solid var(--valid-bordrer);
+  border: var(--BG-fieldset-wit) solid 1px;
+  background-color: var(--valid-fill);
+  color: var(--text-color);
+  transition: 0.2s ease-in-out;
+} */
+
+.text-input:has(input:user-valid) label {
+  color: var(--valid-bordrer);
+  background: linear-gradient(0deg, var(--valid-fill) 50%, var(--BG-fieldset-wit) 50%);
+  transition: 0.2s ease-in-out;
+}
+
+/* .text-input */
+
+/* vragen 1b--------------------------------------------------------- */
+
+/* fieldset:has(.radio-button) {
   display: flex;
-  align-items: flex-start;
-}
-
-fieldset {
-  height: auto;
-  width: 100vw;
-
-  position: relative;
-}
-
-fieldset label {
-  position: absolute;
-  left: 0.4em;
-  top: 10%;
-
-  transform: translateY(-50%);
-
-  color: grey;
-
-  transition: all 0.3s ease-in-out;
-}
-
-fieldset input:focus + label,
-fieldset input:not(:placeholder-shown) + label {
-  left: 0px;
-  top: 0;
-  padding: 0em 0em;
-  color: black;
-  background-color: white;
-  font-size: 0.8em;
-}
-
-input:focus {
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
-}
-
-input {
-  appearance: none;
-  border: none;
-  border-bottom: 1px solid black;
-  border-radius: 0em;
-  padding: 0.5em 0.5em;
-}
-
-fieldset {
-  position: relative;
-  height: 20vh;
+  gap: 0.5em;
 } */
 
-/* Styling text input ---------------------------------------- */
-/* 
-.text-input {
-  position: absolute;
-  margin: 2em;
-  z-index: 111;
+.radio-button {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  border: var(--border-gray) solid 1px;
+  border-radius: 0.5em;
 }
 
-fieldset .text-input input {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.radio-button:hover {
+  cursor: pointer;
+}
 
+.radio-button label {
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.radio-button label:hover {
+  background-color: var(--NS-color-hover);
+  cursor: pointer;
+}
+
+.radio-button input {
+  appearance: none;
+}
+
+.radio-button input:active {
+  appearance: none;
+}
+
+.radio-button input:focus {
   appearance: none;
   border: none;
-  border-bottom: 1px solid black;
-  border-radius: 0em;
-
-  padding: 0.5em 0.5em;
-  display: block;
-  height: inherit;
-  background-color: transparent;
 }
 
-.text-input:focus + .text-input input,
-.text-input:not(:placeholder-shown) + .text-input input {
-  transform: translateY(+50%);
-
-  padding: 0em 0em;
-  color: black;
-  font-size: 0.8em;
+.radio-button input:focus-visible {
+  aspect-ratio: 1;
+  height: 0.5em;
+  margin: 0 0em 0 1em;
+  background-color: #0063d3;
+  border-radius: 1em;
+  align-self: center;
 }
 
-.text-input input:focus {
+.radio-button input:hover {
+  cursor: pointer;
+}
+
+/* de animatie en border wanneer een antwoord aangevinkt is -------------------------------------------------*/
+
+.radio-button:has([type="radio"]:checked) {
+  outline: var(--NS-text-color) 2px solid;
+  border: var(--BG-fieldset-wit) solid 1px;
+  transition: 0.1s ease-in;
+}
+
+/* Styling datepicker ------------------------------------ */
+
+input[type="date"] {
+  width: 100%;
+  padding: 0.7em 1em;
+  background-color: var(--BG-fieldset-wit);
+  border: var(--border-gray) solid 1px;
+  border-radius: 0.5em;
+  font-family: "NS-font-regular";
+  color: var(--text-gray);
+  font-size: 1em;
+}
+
+input[type="date"]:focus {
   outline: none;
-  border: none;
-  border-bottom: 1px solid blue;
-  transition: all 0.3s ease-in-out;
-} */
+  border: solid var(--NS-text-color) 1px;
+}
+
+/* bron: https://share.google/aimode/1EfjSHMuQwGtVmxWw */
+input[type="date"]:user-valid {
+  border: 2px solid var(--valid-bordrer);
+  background-color: var(--valid-fill);
+  color: var(--text-color);
+}
+
+.datepicker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.datepicker label {
+  font-family: "NS-font-regular";
+  color: var(--NS-text-color);
+}
+
+/* Progressive disclosure:-------------------------------------- */
+/* (bron: vasilis)------ */
+
+.ProgDisclosure + fieldset {
+  display: none;
+}
+
+.ProgDisclosure:has([value="ja"]:checked) + fieldset {
+  display: flex;
+}
+
+/* Progressive disclosure van de gehele witte vlakken:-------------------------------------- */
+
+.ProgDisclosureBig + div {
+  display: none;
+}
+
+.ProgDisclosureBig:has([fieldset]:valid) + fieldset {
+  display: flex;
+}

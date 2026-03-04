@@ -19,3 +19,25 @@ We hebben een wekelijkse Geek-sessie gevolgd en daarnaast een workshop over deze
 Ook ben ik begonnen met de styling van het formulier. Ik heb een div om de input en het label geplaatst, wat het animeren van het label een stuk makkelijker maakt. De tekstinput en het label zijn nu geanimeerd. Ik ontdekte dat wanneer je het label eerst goed in het midden plaatst (`align-self: center`) en de div wat extra padding boven en onder geeft, de animatie vrij kan bewegen zonder dat er iets verspringt. Door de standaardpositie `transform: translateY(0%)` te gebruiken, creëer je als het ware een startpunt. Wanneer je vervolgens de `:focus`-state gebruikt met `translateY(-100%)`, verplaats je het label naar een gekozen positie tijdens focus.
 
 Volgende keer gaan we leren over de styling van valideren en wil ik verder met de styling van de radio buttons.
+
+## Dag 3
+
+Vandaag heb ik me gefocust op de styling van de website. Daarbij heb ik de legends en fieldsets aangepast. Ook heb ik toffe animaties toegevoegd aan de radiobuttons. Deze zien er nu uit als selectievlakken waarop je kunt klikken en die vervolgens de juiste styling weergeven. Dit heeft zeker een paar uur gekost, omdat je je gemakkelijk kunt verliezen in de details.
+
+Morgen wil ik beginnen met de styling van de datepicker. Daarnaast ga ik me richten op het weergeven van bepaalde blokken en het verbergen van andere blokken.
+
+## Dag 4
+
+Weekly geek: wij kregen de opdracht om de <a> element te onderoeken en wat het allemaal inhoud en wat er voor nodig is om een <a> te maken en het te laten werken als een <a> zonder de <a> te gebruiken.
+
+De dingen die je niet kan doen is
+
+- visited styling
+- openen in een nieuwe tabblad
+- SEO vertrouwd
+- browser gedrag zoals drag en drop van links
+- rechtermuisknop met context
+- url preview bij status bar
+- en screen readers die link lijsten tonen op basis van echte links missen em soms of behandelen het anders.
+
+Verder heb ik vandaag de progressive disclosure aan de praat gekregen maar nog niet per fieldset blok, en ik heb de datepicker kunnnen vormgeven met wat validati styling voor de inputs.
