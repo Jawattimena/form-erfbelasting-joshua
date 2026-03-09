@@ -23,13 +23,19 @@
   --NS-blue-and-links: #0063d3;
   --NS-text-color: #003082;
   --NS-color-hover: #e0ecff;
+
   --BG-fieldset-wit: #ffffff;
   --BG-page-gray: #e6e6e9;
   --border-gray: #d3d3d3;
+
   --text-gray: #808080;
   --text-color: #000000;
+
   --valid-bordrer: #008000;
   --valid-fill: #e6ffe6;
+
+  --invalid-bordrer: #c90000;
+  --invalid-fill: #ffe6e6;
   /* values:-------------------------------------- */
 }
 
@@ -81,7 +87,7 @@ form {
   justify-content: center;
   align-items: center;
   gap: 0.5em;
-  margin: -15em 0em 0em 1em;
+  margin: -15em 0em 5em 1em;
 }
 
 fieldset {
@@ -163,6 +169,7 @@ input:focus {
 }
 
 /* DIT IS DE STATE NA DE ANIMIE VAN DE INPUT---------------------------------------------- */
+/* (Bron: met braham gefixed) */
 
 .text-input:has(input:focus) label,
 .text-input:has(input:not(:placeholder-shown)) label {
@@ -178,28 +185,62 @@ input:focus {
 /* textinput validation styling---------------------------------------------- */
 
 .text-input input:user-valid {
-  outline: 2px solid var(--valid-bordrer);
+  outline: 1px solid var(--valid-bordrer);
   border: var(--BG-fieldset-wit) solid 1px;
   background-color: var(--valid-fill);
   color: var(--text-color);
   transition: 0.2s ease-in-out;
 }
-
-/* .text-input:has(input:user-valid) input {
-  outline: 2px solid var(--valid-bordrer);
-  border: var(--BG-fieldset-wit) solid 1px;
-  background-color: var(--valid-fill);
-  color: var(--text-color);
-  transition: 0.2s ease-in-out;
-} */
 
 .text-input:has(input:user-valid) label {
   color: var(--valid-bordrer);
-  background: linear-gradient(0deg, var(--valid-fill) 50%, var(--BG-fieldset-wit) 50%);
+  background: linear-gradient(
+    0deg,
+    var(--valid-fill) 50%,
+    var(--BG-fieldset-wit) 50%
+  );
   transition: 0.2s ease-in-out;
 }
 
-/* .text-input */
+.text-input:has(input:user-valid):has(input:placeholder-shown) label {
+  color: var(--text-color);
+  background: var(--valid-fill);
+}
+
+.text-input input:user-invalid {
+  outline: 1px solid var(--invalid-bordrer);
+  border: var(--BG-fieldset-wit) solid 1px;
+  /* background-color: var(--invalid-fill); */
+  color: var(--text-color);
+  transition: 0.2s ease-in-out;
+}
+
+.text-input:has(input:user-invalid) label {
+  color: var(--invalid-bordrer);
+  /* background: linear-gradient(
+    0deg,
+    var(--invalid-fill) 50%,
+    var(--BG-fieldset-wit) 50%
+  ); */
+  transition: 0.2s ease-in-out;
+}
+.text-input:has(input:user-invalid):has(input:placeholder-shown) label {
+  color: var(--text-gray);
+  background: var(--BG-fieldset-wit);
+}
+
+/* submit button */
+button[type="submit"] {
+  align-self: end;
+  width: 5em;
+  padding: 0.5em;
+  background-color: var(--NS-blue-and-links);
+  border: none;
+  border-radius: 0.5em;
+  font-family: "NS-font-regular";
+  color: white;
+  font-size: 1em;
+}
 
 /* vragen 1b--------------------------------------------------------- */
 
@@ -286,7 +327,7 @@ input[type="date"]:focus {
 
 /* bron: https://share.google/aimode/1EfjSHMuQwGtVmxWw */
 input[type="date"]:user-valid {
-  border: 2px solid var(--valid-bordrer);
+  border: 1px solid var(--valid-bordrer);
   background-color: var(--valid-fill);
   color: var(--text-color);
 }

@@ -41,3 +41,11 @@ De dingen die je niet kan doen is
 - en screen readers die link lijsten tonen op basis van echte links missen em soms of behandelen het anders.
 
 Verder heb ik vandaag de progressive disclosure aan de praat gekregen maar nog niet per fieldset blok, en ik heb de datepicker kunnnen vormgeven met wat validati styling voor de inputs.
+
+## Dag 5
+
+Vandaag ben ik bezig geweest met het maken van de validatie. Ik heb een begin gemaakt met de HTML- en CSS-validatie en ook met de JavaScript-validatie. De HTML- en CSS-validatie is wat makkelijker en werkt al redelijk goed. De JavaScript-validatie werkt nog niet helemaal; daar moet ik nog verder naar kijken.
+
+Het valideren duurde langer dan verwacht en is moeilijker dan ik dacht. Tot nu toe heb ik alleen nog maar validaties voor tekstvelden en nog geen validaties voor radiobuttons.
+
+Morgen ga ik verder met het valideren van de rest van het formulier en ik wil dan alle validaties afronden.
