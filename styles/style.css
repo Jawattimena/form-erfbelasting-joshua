@@ -21,6 +21,7 @@
   /* colors:-------------------------------------- */
   --NS-yellow: #ffc917;
   --NS-blue-and-links: #0063d3;
+  --NS-blue-and-links-hover: #3f8ce3;
   --NS-text-color: #003082;
   --NS-color-hover: #e0ecff;
 
@@ -54,7 +55,7 @@ header {
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 40vh;
+  height: 30vh;
   background-color: var(--NS-yellow);
 }
 
@@ -63,7 +64,7 @@ body {
 }
 
 h1 {
-  margin: 1.5em;
+  margin: 1em;
   font-size: 2.2em;
   font-family: "NS-font-regular";
   color: var(--NS-text-color);
@@ -90,6 +91,8 @@ form {
   margin: -15em 0em 5em 1em;
 }
 
+/* dit zijn de white boxes en fieldsets ---------------------------------------------*/
+
 fieldset {
   display: flex;
   flex-direction: column;
@@ -108,7 +111,6 @@ legend {
   color: #003082;
 }
 
-/* dit zijn de white boxes */
 form > div {
   box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.1);
   width: 80vw;
@@ -119,6 +121,22 @@ form > div {
 form > div > fieldset {
   padding: 0em 2em 2em 2em;
   gap: 2em;
+}
+
+/* laatste fieldset */
+
+.drie-opties-radio-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  div {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 600px) {
+    flex-direction: row;
+  }
 }
 
 /* de > sellecteert alleen de eerste kinderen van de parent, dus in dit geval de eerste legend van elk fieldset. */
@@ -161,7 +179,11 @@ div:has(.text-input) {
   cursor: text;
 }
 
-/* HIER HEB IKK DE BLAUWE OUTLINE VERWIJDERD WANNEER DIE FOCUS HEEFT.-------- */
+::placeholder {
+  color: var(--text-gray);
+}
+
+/* HIER HEB IK DE BLAUWE OUTLINE VERWIJDERD WANNEER DIE FOCUS HEEFT.-------- */
 
 input:focus {
   outline: none;
@@ -203,25 +225,27 @@ input:focus {
 }
 
 .text-input:has(input:user-valid):has(input:placeholder-shown) label {
-  color: var(--text-color);
+  color: var(--text-gray);
   background: var(--valid-fill);
+}
+
+.text-input:has(input:user-valid:focus):has(input:placeholder-shown) label {
+  background: linear-gradient(
+    0deg,
+    var(--valid-fill) 50%,
+    var(--BG-fieldset-wit) 50%
+  );
 }
 
 .text-input input:user-invalid {
   outline: 1px solid var(--invalid-bordrer);
   border: var(--BG-fieldset-wit) solid 1px;
-  /* background-color: var(--invalid-fill); */
   color: var(--text-color);
   transition: 0.2s ease-in-out;
 }
 
 .text-input:has(input:user-invalid) label {
   color: var(--invalid-bordrer);
-  /* background: linear-gradient(
-    0deg,
-    var(--invalid-fill) 50%,
-    var(--BG-fieldset-wit) 50%
-  ); */
   transition: 0.2s ease-in-out;
 }
 .text-input:has(input:user-invalid):has(input:placeholder-shown) label {
@@ -240,14 +264,19 @@ button[type="submit"] {
   font-family: "NS-font-regular";
   color: white;
   font-size: 1em;
+
+  &:hover,
+  &:focus {
+    background-color: var(--NS-blue-and-links-hover);
+    cursor: pointer;
+  }
+
+  &:active {
+    scale: 0.98;
+  }
 }
 
 /* vragen 1b--------------------------------------------------------- */
-
-/* fieldset:has(.radio-button) {
-  display: flex;
-  gap: 0.5em;
-} */
 
 .radio-button {
   display: flex;
@@ -362,4 +391,25 @@ input[type="date"]:user-valid {
 
 .ProgDisclosureBig:has([fieldset]:valid) + fieldset {
   display: flex;
+}
+
+/* Progressive disclosure van de 3 radio buttons witte vlakken:-------------------------------------- */
+/* hide */
+.textinput-Bsn-RSIN,
+.textinput-beconnummer,
+.textinput-protocolnummer {
+  display: none;
+}
+
+/* show */
+.one-of-three:has(input[id="Bsn-RSIN"]:checked) .textinput-Bsn-RSIN {
+  display: block;
+}
+
+.one-of-three:has(input[id="Beconnummer"]:checked) .textinput-beconnummer {
+  display: block;
+}
+.one-of-three:has(input[id="Protocolnummer"]:checked)
+  .textinput-protocolnummer {
+  display: block;
 }
