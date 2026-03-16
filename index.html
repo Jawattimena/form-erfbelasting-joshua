@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Erfbelasting form Joshua Wattimena</title>
     <link rel="stylesheet" href="styles/style.css" />
-    <script src="javascript/script.js" defer></script>
+    
   </head>
   <body>
-    <header>
-      <p>Dit is een school project!</p>
-    </header>
+    <header></header>
     <main>
-      <form novalidate>
+      <form>
+        <p>Dit is een school project!</p>
         <h1>Erfbelasting aangifte</h1>
-        <div>
-          <fieldset id="questions-1a">
-            <legend>1/5 gegevens van de overledenen</legend>
+          <fieldset id="questions-1">
+            <legend>Vraag 1 van 5</legend>
+            <h2>Gegevens van de overledenen</h2>
             <div>
               <div class="text-input">
-                <label for="voorletter(s)">Voornaam(en)*</label>
+                <label for="voorletter(s)"
+                  >Voornaam (meer dan 1 mogelijk)</label
+                >
                 <input
                   id="voorletter(s)"
                   type="text"
@@ -28,11 +29,12 @@
                   pattern="[A-Za-z\s]*"
                   required
                 />
-                <!-- <span>Dit veld is verplicht</span> -->
               </div>
 
               <div class="text-input">
-                <label for="Tussenvoegsel(s)">Tussenvoegsel(s)</label>
+                <label for="Tussenvoegsel(s)"
+                  >Tussenvoegsel (meer dan 1 mogelijk)</label
+                >
                 <input
                   id="Tussenvoegsel(s)"
                   type="text"
@@ -43,7 +45,7 @@
               </div>
 
               <div class="text-input">
-                <label for="Achternaam">Achternaam*</label>
+                <label for="Achternaam">Achternaam</label>
                 <input
                   id="Achternaam"
                   type="text"
@@ -56,31 +58,31 @@
                 />
               </div>
             </div>
-            <fieldset>
-              <legend>BSN overledenen*</legend>
-              <div class="text-input">
-                <label for="BSN-Overledenen"></label>
-                <input
-                  id="BSN-Overledenen"
-                  name="BSN overledenen"
-                  placeholder="000000000"
-                  maxlength="9"
-                  pattern="[0-9]{9}"
-                  required
-                />
-              </div>
-            </fieldset>
+            <div class="text-input">
+              <label for="BSN-Overledenen">BSN overledenen</label>
+              <input
+                id="BSN-Overledenen"
+                type="text"
+                name="BSN overledenen"
+                placeholder=""
+                maxlength="9"
+                pattern="[0-9]{9}"
+                required
+              />
+              <p>BSN bestaat uit 9 cijfers</p>
+            </div>
             <div class="datepicker">
-              <label for="Overleidings-Datum">Overleidings datum*</label>
+              <label for="Overleidings-Datum">Overleidings datum</label>
               <input id="Overleidings-Datum"" type="date" name="Overleidings
               datum" min="2024-8-01" max="" value="today" required/>
             </div>
           </fieldset>
-        </div>
-
-        <div>
-          <fieldset id="questions-1b">
-            <legend>2/5 De huwelijkse staat van de overledenen</legend>
+        
+          <fieldset id="questions-2">
+            <legend>
+              Vraag 2 van 5
+            </legend>
+            <h2>De huwelijkse staat van de overledenen</h2>
             <fieldset class="ProgDisclosure">
               <legend>
                 2.1 Was de overledene getrouwd of had de overledene een
@@ -108,81 +110,80 @@
                   required
                 />
               </div>
-            </fieldset>
 
-            <fieldset class="ProgDisclosure">
-              <legend>
-                2.2 Was de overledene getrouwd of had de overledene een
-                geregistreerde partner op het moment van overlijden?
-              </legend>
+              <fieldset class="ProgDisclosure">
+                <legend>
+                  2.2 Was de overledene getrouwd of had de overledene een
+                  geregistreerde partner op het moment van overlijden?
+                </legend>
 
-              <div class="radio-button">
-                <label for="radioGroup2ja"
-                  >Ja. Stuur een kopie van de akte mee met de aangifte.</label
-                >
-                <input
-                  id="radioGroup2ja"
-                  type="radio"
-                  name="radioGroup2"
-                  value="ja"
-                />
-              </div>
+                <div class="radio-button">
+                  <label for="radioGroup2ja"
+                    >Ja. Stuur een kopie van de akte mee met de aangifte.</label
+                  >
+                  <input
+                    id="radioGroup2ja"
+                    type="radio"
+                    name="radioGroup2"
+                    value="ja"
+                  />
+                </div>
 
-              <div class="radio-button">
-                <label for="radioGroup2nee">Nee, ga verder met vraag 3</label>
-                <input
-                  id="radioGroup2nee"
-                  type="radio"
-                  name="radioGroup2"
-                  value="nee"
-                />
-              </div>
-            </fieldset>
+                <div class="radio-button">
+                  <label for="radioGroup2nee">Nee, ga verder met vraag 3</label>
+                  <input
+                    id="radioGroup2nee"
+                    type="radio"
+                    name="radioGroup2"
+                    value="nee"
+                  />
+                </div>
 
-            <fieldset class="ProgDisclosure">
-              <legend>
-                2.3 Hadden de overledene en diens partner een finaal
-                verrekenbeding?
-              </legend>
+                <fieldset class="ProgDisclosure">
+                  <legend>
+                    2.3 Hadden de overledene en diens partner een finaal
+                    verrekenbeding?
+                  </legend>
 
-              <div class="radio-button">
-                <label for="radioGroup3ja">Ja</label>
-                <input
-                  id="radioGroup3ja"
-                  type="radio"
-                  name="radioGroup3"
-                  value="ja"
-                />
-              </div>
+                  <div class="radio-button">
+                    <label for="radioGroup3ja">Ja</label>
+                    <input
+                      id="radioGroup3ja"
+                      type="radio"
+                      name="radioGroup3"
+                      value="ja"
+                    />
+                  </div>
 
-              <div class="radio-button">
-                <label for="radioGroup3nee">Nee</label>
-                <input
-                  id="radioGroup3nee"
-                  type="radio"
-                  name="radioGroup3"
-                  value="nee"
-                />
-              </div>
-            </fieldset>
-
-            <fieldset class="datepicker ProgDisclosure">
-              <label for="datepickerHuwelijk"
-                >2.4 Datum huwelijkse of partnerschapsvoorwaarden</label
-              >
-              <input
-                id="datepickerHuwelijk"
-                type="date"
-                name="getrouwdOfPartner"
-              />
+                  <div class="radio-button">
+                    <label for="radioGroup3nee">Nee</label>
+                    <input
+                      id="radioGroup3nee"
+                      type="radio"
+                      name="radioGroup3"
+                      value="nee"
+                    />
+                  </div>
+                  <fieldset class="datepicker ProgDisclosure>
+                    <label for="datepickerHuwelijk"
+                      >2.4 Datum huwelijkse of partnerschapsvoorwaarden</label
+                    >
+                    <input
+                      id="datepickerHuwelijk"
+                      type="date"
+                      name="getrouwdOfPartner"
+                    />
+                  </fieldset>
+                </fieldset>
+              </fieldset>
             </fieldset>
           </fieldset>
-        </div>
-
-        <div>
-          <fieldset id="questions-1c">
-            <legend>3/5 Vragen over de kinderen van de overledenen</legend>
-
+        
+          <fieldset id="questions-3">
+            <legend>
+              Vraag 3 van 5
+            </legend>
+            <h2>Vragen over de kinderen van de overledenen</h2>
             <fieldset class="ProgDisclosure">
               <legend>3.1 Had de overledene kinderen?</legend>
 
@@ -205,65 +206,61 @@
                   value="nee"
                 />
               </div>
-            </fieldset>
+              <fieldset class="ProgDisclosure">
+                <legend>
+                  3.2 Is 1 van deze kinderen eerder overleden dan de overledene
+                  voor wie u nu aangifte doet?
+                </legend>
 
-            <fieldset class="ProgDisclosure">
-              <legend>
-                3.2 Is 1 van deze kinderen eerder overleden dan de overledene
-                voor wie u nu aangifte doet?
-              </legend>
+                <div class="radio-button">
+                  <label for="radioGroup5ja">Ja</label>
+                  <input
+                    id="radioGroup5ja"
+                    type="radio"
+                    name="radioGroup5"
+                    value="ja"
+                  />
+                </div>
 
-              <div class="radio-button">
-                <label for="radioGroup5ja">Ja</label>
-                <input
-                  id="radioGroup5ja"
-                  type="radio"
-                  name="radioGroup5"
-                  value="ja"
-                />
-              </div>
-
-              <div class="radio-button">
-                <label for="radioGroup5nee">Nee, ga verder met vraag 4</label>
-                <input
-                  id="radioGroup5nee"
-                  type="radio"
-                  name="radioGroup5"
-                  value="nee"
-                />
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend>3.3 Had dit overleden kind zelf kinderen?</legend>
-
-              <div class="radio-button">
-                <label for="radioGroup6ja">Ja</label>
-                <input
-                  id="radioGroup6ja"
-                  type="radio"
-                  name="radioGroup6"
-                  value="ja"
-                />
-              </div>
-
-              <div class="radio-button">
-                <label for="radioGroup6nee">Nee</label>
-                <input
-                  id="radioGroup6nee"
-                  type="radio"
-                  name="radioGroup6"
-                  value="nee"
-                />
-              </div>
+                <div class="radio-button">
+                  <label for="radioGroup5nee">Nee, ga verder met vraag 4</label>
+                  <input
+                    id="radioGroup5nee"
+                    type="radio"
+                    name="radioGroup5"
+                    value="nee"
+                  />
+                </div>
+                <fieldset>
+                  <legend>3.3 Had dit overleden kind zelf kinderen?</legend>
+    
+                  <div class="radio-button">
+                    <label for="radioGroup6ja">Ja</label>
+                    <input
+                      id="radioGroup6ja"
+                      type="radio"
+                      name="radioGroup6"
+                      value="ja"
+                    />
+                  </div>
+    
+                  <div class="radio-button">
+                    <label for="radioGroup6nee">Nee</label>
+                    <input
+                      id="radioGroup6nee"
+                      type="radio"
+                      name="radioGroup6"
+                      value="nee"
+                    />
+                  </div>
+                </fieldset>
+              </fieldset>
             </fieldset>
           </fieldset>
-        </div>
-
-        <div>
-          <fieldset id="questions-1d">
-            <legend>4/5 Vragen over testament</legend>
-
+        
+          <fieldset id="questions-4">
+            <legend>Vraag 4 van 5</legend>
+            <h2>Vragen over testament</h2>
             <fieldset class="ProgDisclosure">
               <legend>4.1 Had de overledene een testament?</legend>
               <div class="radio-button">
@@ -288,86 +285,103 @@
                   value="nee"
                 />
               </div>
+
+              <fieldset>
+                <legend>Gegevens van de notaris</legend>
+                
+                <div class="text-input">
+                  <label for="voornaam-notaris">Voornaam notaris</label>
+                  <input
+                    id="voornaam-notaris"
+                    type="text"
+                    name="voorletter(s)"
+                    placeholder=""
+                    required
+                  />
+                  <p>Meer dan 1 mogelijk</p>
+                </div>
+
+                <div class="text-input">
+                  <label for="Tussenvoegsel(s)-notaris">Tussenvoegsel notaris</label>
+                  <input
+                    id="-notaris"
+                    type="text"
+                    name="Tussenvoegsel(s)"
+                    placeholder=""
+                  />
+                  <p>Meer dan 1 mogelijk</p>
+                </div>
+                <div class="text-input">
+                  <label for="Achternaam-notaris">Achternaam notaris</label>
+                  <input
+                    id="Achternaam-notaris"
+                    type="text"
+                    name="Achternaam"
+                    placeholder=""
+                    required
+                  />
+                  <p>Meer dan 1 mogelijk</p>
+                </div>
+
+                <div class=" text-input">
+                  <label for="Postcode-notaris">Protocolnummer notaris</label>
+                  <input
+                    id="Postcode-notaris"
+                    type="text"
+                    name="Postcode Notaris"
+                    placeholder=""
+                    required
+                    pattern="[0-9]{6}"
+                    maxlength="6"
+                  />
+                  <p>Protocolnummer bestaat uit 6 cijfers</p>
+                </div>
+
+                <div class="text-input">
+                  <label for="Vestigingsplaats-notaris">Vestigingsplaats notariskantoor</label>
+                  <input
+                    id="Vestigingsplaats-notaris"
+                    type="text"
+                    name="Vestigingsplaats"
+                    placeholder=""
+                    required
+                  />
+                </div>
+                
+                <div class="datepicker">
+                  <label for="datumn-testament"
+                    >Datum van het testament of van de laatste wijziging</label
+                  >
+                  <input
+                    id="datumn-testament"
+                    type="date"
+                    name="Vestigingsplaats"
+                    placeholder=""
+                    required
+                  />
+                </div>
+              </fieldset>
             </fieldset>
 
-            <fieldset>
-              <div class="text-input">
-                <label for="Postcode-notaris">Protocolnummer notaris</label>
-                <input
-                  id="-notaris"
-                  type="text"
-                  name="Postcode Notaris"
-                  placeholder=""
-                />
-              </div>
-
-              <div class="text-input">
-                <label for="voorletter(s)-notaris">voorletter(s)</label>
-                <input
-                  id="-notaris"
-                  type="text"
-                  name="voorletter(s)"
-                  placeholder=""
-                />
-              </div>
-
-              <div class="text-input">
-                <label for="Tussenvoegsel(s)-notaris">Tussenvoegsel(s)</label>
-                <input
-                  id="-notaris"
-                  type="text"
-                  name="Tussenvoegsel(s)"
-                  placeholder=""
-                />
-              </div>
-              <div class="text-input">
-                <label for="Achternaam-notaris">Achternaam</label>
-                <input
-                  id="Achternaam-notaris"
-                  type="text"
-                  name="Achternaam"
-                  placeholder=""
-                />
-              </div>
-              <div class="text-input">
-                <label for="Vestigingsplaats-notaris">Vestigingsplaats</label>
-                <input
-                  id="Vestigingsplaats-notaris"
-                  type="text"
-                  name="Vestigingsplaats"
-                  placeholder=""
-                />
-              </div>
-              <div class="datepicker">
-                <label for="datumn-testament"
-                  >Datum van het testament of van de laatste wijziging</label
-                >
-                <input
-                  id="datumn-testament"
-                  type="date"
-                  name="Vestigingsplaats"
-                  placeholder=""
-                />
-              </div>
-            </fieldset>
           </fieldset>
-        </div>
-        <div>
-          <fieldset class="one-of-three">
-            <legend>5/5 Gegevens gemachtigden</legend>
+        
+          <fieldset id="questions-5" class="one-of-three">
+            <legend>Vraag 5 van 5</legend>
+            <h2>Gegevens gemachtigden</h2>
             <fieldset>
               <legend>
-                Vul de gegevens van de gemachtigde in. De gemachtigde is degene
-                die namens 1 of meerdere personen en/of instellingen aangifte
-                doet. Het invullen van een telefoonnummer of e-mailadres is niet
-                verplicht, maar wel handig. Dan kunnen wij u makkelijker vragen
-                stellen of uitleg geven. <br />
-                <br />
                 <i
-                  >1 van de 3 in: het bsn of RSIN van de gemachtigde, het
-                  beconnummer van de adviseur of het protocolnummer van de
-                  notaris.</i
+                  >Vul de gegevens van de gemachtigde in. De gemachtigde is
+                  degene die namens 1 of meerdere personen en/of instellingen
+                  aangifte doet. Het invullen van een telefoonnummer of
+                  e-mailadres is niet verplicht, maar wel handig. Dan kunnen wij
+                  u makkelijker vragen stellen of uitleg geven.</i
                 >
+                <br />
+                <br />
+                1 van de 3 in: het bsn of RSIN van de gemachtigde, het
+                beconnummer van de adviseur of het protocolnummer van de
+                notaris.
               </legend>
 
               <div class="drie-opties-radio-buttons">
@@ -378,6 +392,7 @@
                     id="Bsn-RSIN"
                     value="Bsn/RSIN gemachtigde"
                     name="gegevens gemachtigde"
+                    required
                   />
                 </div>
                 <div class="radio-button">
@@ -387,6 +402,8 @@
                     id="Beconnummer"
                     value="Beconnummer adviseur"
                     name="gegevens gemachtigde"
+                    
+                    required
                   />
                 </div>
                 <div class="radio-button">
@@ -396,56 +413,61 @@
                     id="Protocolnummer"
                     value="Protocolnummer"
                     name="gegevens gemachtigde"
+                    required
                   />
                 </div>
               </div>
 
-              <fieldset class="textinput-Bsn-RSIN">
-                <legend>Bsn/RSIN gemachtigde</legend>
-                <div class="text-input">
-                  <label for="Bsn-RSIN-textinput"></label>
-                  <input
-                    id="Bsn-RSIN-textinput"
-                    type="text"
-                    name="gegevensGemachtigden2"
-                    placeholder="000000000"
-                  />
-                </div>
-              </fieldset>
+              <div class="textinput-Bsn-RSIN text-input">
+                <label for="Bsn-RSIN-textinput">Bsn/RSIN gemachtigde</label>
+                <input
+                  id="Bsn-RSIN-textinput"
+                  type="text"
+                  name="Gegevens gemachtigden BSN/RSIN"
+                  placeholder=""
+                  maxlength="9"
+                  pattern="[0-9]{9}"
+                  required
+                />
+                <p>Bsn/RSIN bestaat uit 9 cijfers</p>
+              </div>
 
-              <fieldset class="textinput-beconnummer">
-                <legend>Beconnummer adviseur</legend>
-                <div class="text-input">
-                  <label for="beconnummer-adviseur-textinput"></label>
-                  <input
-                    id="beconnummer-adviseur-textinput"
-                    type="text"
-                    name="gegevensGemachtigden2"
-                    placeholder="000000"
-                  />
-                </div>
-              </fieldset>
+              <div class="textinput-beconnummer text-input">
+                <label for="beconnummer-adviseur-textinput"
+                  >Beconnummer adviseur</label
+                >
+                <input
+                  id="beconnummer-adviseur-textinput"
+                  type="text"
+                  maxlength="6"
+                  pattern="[0-9]{6}"
+                  name="Gegevens gemachtigden Beconnummer"
+                  placeholder=""
+                  required
+                />
+                <p>Beconnummer bestaat uit 6 cijfers</p>
+              </div>
 
-              <fieldset class="textinput-protocolnummer">
-                <legend>Protocolnummer notaris</legend>
-                <div class="text-input">
-                  <label for="protocolnummer-notaris-textinput"></label>
-                  <input
-                    id="protocolnummer-notaris-textinput"
-                    type="text"
-                    name="gegevensGemachtigden2"
-                    maxlength="6"
-                    pattern="[0-9]{6}"
-                    placeholder="000000"
-                    required
-                  />
-                </div>
-              </fieldset>
+              <div class="textinput-protocolnummer text-input">
+                <label for="protocolnummer-notaris-textinput"
+                  >Protocolnummer notaris</label
+                >
+                <input
+                  id="protocolnummer-notaris-textinput"
+                  type="text"
+                  name="Gegevens gemachtigden Protocolnummer"
+                  maxlength="6"
+                  pattern="[0-9]{6}"
+                  placeholder=""
+                  required
+                />
+                <p>Protocolnummer bestaat uit 6 cijfers</p>
+              </div>
               <button type="submit">Submit</button>
             </fieldset>
           </fieldset>
-        </div>
       </form>
     </main>
+    <script src="javascript/script.js"></script>
   </body>
 </html>

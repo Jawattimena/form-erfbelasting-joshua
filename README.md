@@ -128,3 +128,9 @@ Ik had in het begin moeite met het correct selecteren van het pattern. Uiteindel
 Ook heb ik mij verdiept in validatie met JavaScript. Ik heb de datepicker aangepast, waarbij de maximale datum is ingesteld op vandaag en de minimale datum op acht maanden terug. Dit komt overeen met de wettelijke termijn waarbinnen erfbelasting na een overlijden mag worden ingevoerd.
 
 Volgende week ga ik mij verder verdiepen in JavaScript-validatie en aanvullende validatie voor verplichte invoervelden.
+
+## Dag 7
+
+Vandaag ben ik bezig geweest met het verbeteren van de progressive disclosure. Het is me gelukt om de vragen die niet meer van toepassing zijn (alle kinderen van het HTML-element) te sluiten, zodat de overbodige vragen niet meer zichtbaar zijn. Ook heb ik de vormgeving van (vraag 1 van 5 etc.) aangepast. Deze zijn nu als labels vormgegeven.
+
+Verder ben ik bezig geweest met een verbetering in JavaScript om de foutmeldingen van niet-ingevulde verplichte invoervelden weer te geven. Dit is nog niet gelukt; daar ga ik morgen hulp voor vragen aan de docent.

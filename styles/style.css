@@ -49,14 +49,22 @@
   font-family: "NS-font-regular";
   line-height: 1.5em;
 }
+body {
+  display: flex;
+  justify-content: center;
+}
 
 header {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 30vh;
+  height: 45vh;
   background-color: var(--NS-yellow);
+}
+
+main {
+  position: absolute;
 }
 
 body {
@@ -70,17 +78,6 @@ h1 {
   color: var(--NS-text-color);
 }
 
-p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  padding: 1em;
-  background-color: red;
-  font-family: "NS-font-bold";
-  color: white;
-}
-
 form {
   justify-self: center;
   display: flex;
@@ -88,7 +85,17 @@ form {
   justify-content: center;
   align-items: center;
   gap: 0.5em;
-  margin: -15em 0em 5em 1em;
+  margin: 0em 0em 5em 0em;
+  p:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 1em;
+    background-color: red;
+    font-family: "NS-font-bold";
+    color: white;
+  }
 }
 
 /* dit zijn de white boxes en fieldsets ---------------------------------------------*/
@@ -105,46 +112,72 @@ fieldset {
 legend {
   box-sizing: border-box;
   width: 100%;
-  margin: 1em 0em 1em 0em;
+  margin: 1em 0em;
   background-color: var(--BG-fieldset-wit);
   font-family: "NS-font-regular";
-  color: #003082;
+  color: var(--NS-text-color);
 }
 
-form > div {
-  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.1);
-  width: 80vw;
-  background-color: var(--BG-fieldset-wit);
-  border-radius: 1em;
+form {
+  h2 {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0.5em 0em -0.5em 0em;
+    background-color: var(--BG-fieldset-wit);
+    font-family: "NS-font-regular";
+    font-size: 1.3em;
+    color: var(--NS-text-color);
+  }
+  > fieldset {
+    margin: 0.5em 0em;
+    padding: 0em 2em 2em 2em;
+    gap: 2em;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.1);
+    width: 80vw;
+    /* background-color: var(--BG-fieldset-wit); */
+    border-radius: 1em;
+
+    > legend {
+      background-color: var(--NS-text-color);
+      color: var(--BG-fieldset-wit);
+      font-size: 0.8em;
+      padding: 0.4em 0.8em;
+      width: fit-content;
+      border-radius: 0.5em;
+      font-family: "NS-font-regular";
+    }
+  }
 }
 
-form > div > fieldset {
-  padding: 0em 2em 2em 2em;
-  gap: 2em;
+/* Required star */
+
+label:has(
+    + input[type="text"][required],
+    + input[type="date"][required]
+  )::after {
+  content: "*";
+  color: var(--invalid-bordrer);
+  margin-left: 0.2em;
+}
+
+form > fieldset > fieldset legend::after {
+  content: "*";
+  color: var(--invalid-bordrer);
 }
 
 /* laatste fieldset */
-
 .drie-opties-radio-buttons {
   display: flex;
   flex-direction: column;
   gap: 1em;
-
+  margin: 0em 0em 0.5em 0em;
   div {
     width: 100%;
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 650px) {
     flex-direction: row;
   }
-}
-
-/* de > sellecteert alleen de eerste kinderen van de parent, dus in dit geval de eerste legend van elk fieldset. */
-form > div > fieldset > legend {
-  padding: 1.3em 0em 0.5em 0em;
-  font-size: 1.3em;
-  font-family: "NS-font-regular";
-  color: var(--NS-text-color);
 }
 
 /* Text input styling:--------------------------------------  */
@@ -157,30 +190,33 @@ div:has(.text-input) {
 .text-input {
   position: relative;
   padding: 0em 0em;
-}
 
-.text-input label {
-  align-self: center;
-  position: absolute;
-  left: 0.7em;
-  transform: translateY(0%);
-  color: var(--text-gray);
-}
+  label {
+    align-self: center;
+    position: absolute;
+    left: 0.7em;
+    transform: translateY(0%);
+    color: var(--text-gray);
+  }
 
-.text-input input {
-  width: 100%;
-  padding: 0.7em 1em;
-  border: solid var(--border-gray) 1px;
-  border-radius: 0.5em;
-  font-size: 1em;
-}
+  input {
+    width: 100%;
+    padding: 0.7em 1em;
+    border: solid var(--border-gray) 1px;
+    border-radius: 0.5em;
+    font-size: 1em;
+  }
 
-.text-input label:hover {
-  cursor: text;
-}
+  label:hover {
+    cursor: text;
+  }
 
-::placeholder {
-  color: var(--text-gray);
+  p {
+    font-family: "NS-font-regular";
+    font-size: 0.8em;
+    color: var(--text-gray);
+    margin: 0.5em 0em 0em 0.3em;
+  }
 }
 
 /* HIER HEB IK DE BLAUWE OUTLINE VERWIJDERD WANNEER DIE FOCUS HEEFT.-------- */
@@ -214,14 +250,20 @@ input:focus {
   transition: 0.2s ease-in-out;
 }
 
-.text-input:has(input:user-valid) label {
-  color: var(--valid-bordrer);
-  background: linear-gradient(
-    0deg,
-    var(--valid-fill) 50%,
-    var(--BG-fieldset-wit) 50%
-  );
-  transition: 0.2s ease-in-out;
+.text-input:has(input:user-valid) {
+  label {
+    color: var(--valid-bordrer);
+    background: linear-gradient(
+      0deg,
+      var(--valid-fill) 50%,
+      var(--BG-fieldset-wit) 50%
+    );
+    transition: 0.2s ease-in-out;
+  }
+
+  p {
+    display: none;
+  }
 }
 
 .text-input:has(input:user-valid):has(input:placeholder-shown) label {
@@ -244,9 +286,16 @@ input:focus {
   transition: 0.2s ease-in-out;
 }
 
-.text-input:has(input:user-invalid) label {
-  color: var(--invalid-bordrer);
-  transition: 0.2s ease-in-out;
+.text-input:has(input:user-invalid) {
+  label {
+    color: var(--invalid-bordrer);
+    transition: 0.2s ease-in-out;
+  }
+
+  p {
+    color: var(--invalid-bordrer);
+    transition: 0.2s ease-in-out;
+  }
 }
 .text-input:has(input:user-invalid):has(input:placeholder-shown) label {
   color: var(--text-gray);
@@ -373,24 +422,21 @@ input[type="date"]:user-valid {
 }
 
 /* Progressive disclosure:-------------------------------------- */
-/* (bron: vasilis)------ */
+/* (bron: hulp vasilis)------ */
 
-.ProgDisclosure + fieldset {
+.ProgDisclosure fieldset {
   display: none;
 }
 
-.ProgDisclosure:has([value="ja"]:checked) + fieldset {
-  display: flex;
-}
+.ProgDisclosure {
+  &:has([value="ja"]:checked) > fieldset {
+    margin: 2em 0em 0em 0em;
+    display: flex;
+  }
 
-/* Progressive disclosure van de gehele witte vlakken:-------------------------------------- */
-
-.ProgDisclosureBig + div {
-  display: none;
-}
-
-.ProgDisclosureBig:has([fieldset]:valid) + fieldset {
-  display: flex;
+  &:not(:has(> div > input[value="ja"]:checked)) > fieldset {
+    display: none;
+  }
 }
 
 /* Progressive disclosure van de 3 radio buttons witte vlakken:-------------------------------------- */
