@@ -134,3 +134,9 @@ Volgende week ga ik mij verder verdiepen in JavaScript-validatie en aanvullende 
 Vandaag ben ik bezig geweest met het verbeteren van de progressive disclosure. Het is me gelukt om de vragen die niet meer van toepassing zijn (alle kinderen van het HTML-element) te sluiten, zodat de overbodige vragen niet meer zichtbaar zijn. Ook heb ik de vormgeving van (vraag 1 van 5 etc.) aangepast. Deze zijn nu als labels vormgegeven.
 
 Verder ben ik bezig geweest met een verbetering in JavaScript om de foutmeldingen van niet-ingevulde verplichte invoervelden weer te geven. Dit is nog niet gelukt; daar ga ik morgen hulp voor vragen aan de docent.
+
+## Dag 8
+
+Vandaag heb ik nog gewerkt aan JavaScript validatie en ben ik naar victor geweest om daar vragen over te stellen omdat ik het niet begreep. Bleek dat ik de constante met de class naam een div selecteerde inplaats van de input. dit is nu gefixed.
+
+Ik ben ook bezig geweest met CSS om een extra thema toe te voegen en ik heb de website responsive gemakt.
