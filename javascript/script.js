@@ -39,15 +39,18 @@ formulier.noValidate = true;
 const textDateInputs = document.querySelectorAll(
   "input[type=text], input[type=date]"
 );
-const radioButtons = document.querySelectorAll(".radio-button input");
 
-radioButtons.forEach((radio) => {
-  console.log(radio.name, radio.value);
+textDateInputs.forEach(function (input) {
+  input.addEventListener("input", function () {
+    const volgende = input.nextElementSibling;
+
+    if (volgende && volgende.classList.contains("foutmelding")) {
+      if (input.value.trim() !== "") {
+        volgende.remove();
+      }
+    }
+  });
 });
-
-const fieldsetVraag2 = document.querySelectorAll("#questions-2");
-const fieldsetVraag3 = document.querySelectorAll("#questions-3");
-const fieldsetVraag4 = document.querySelectorAll("#questions-4");
 
 formulier.addEventListener("submit", function (e) {
   // Hier voert hij de functie checkInputs uit
@@ -75,12 +78,12 @@ function checkInputs() {
     // checked of dei required is en checked of het invoer veld wel ingevuld is
     const isVisible = textDateInput.offsetParent !== null;
     const required = textDateInput.validity.valueMissing;
-    const typFout = textDateInput.validity.valueMissing;
 
     // Als de text input leeg is voor dan dit uit
     if (isVisible && required) {
       // Hier geeft hij aan de het fout is
       geldig = false;
+
       // Hier maak ik de melding aan en geef ik het een styling
       let melding = document.createElement("div");
       melding.className = "foutmelding";
@@ -91,9 +94,9 @@ function checkInputs() {
 
       // Hier voeg ik de div(melding) toe als siblng van het inputveld in de div.
       textDateInput.insertAdjacentElement("afterend", melding);
-      textDateInput.focus();
     }
   });
+
   return geldig;
 }
 
