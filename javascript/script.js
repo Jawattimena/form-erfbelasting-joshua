@@ -60,6 +60,7 @@ formulier.addEventListener("submit", function (e) {
 
   if (eersteFout) {
     eersteFout.scrollIntoView({ behavior: "smooth", block: "center" });
+    this.querySelector("input").focus();
   }
 
   if (!geldig) {
