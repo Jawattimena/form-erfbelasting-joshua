@@ -140,3 +140,11 @@ Verder ben ik bezig geweest met een verbetering in JavaScript om de foutmeldinge
 Vandaag heb ik nog gewerkt aan JavaScript validatie en ben ik naar victor geweest om daar vragen over te stellen omdat ik het niet begreep. Bleek dat ik de constante met de class naam een div selecteerde inplaats van de input. dit is nu gefixed.
 
 Ik ben ook bezig geweest met CSS om een extra thema toe te voegen en ik heb de website responsive gemakt.
+
+## Reflectie
+
+Bij BT heb ik veel mogen leren over hoe een formulier is opgebouwd en hoe je een formulier op web nog meer user friendly kan maken dan de papier versie. Ik heb hier geleerd over en hoe diep je in de details kan gaan van validatie en UX van een form.
+
+Ik ben wel trots op het eindresultaat waaronder de geanimeerde label en input veld. Het is misschien niet de meest gebruikers vriendelijke manier om een text input vorm te geven maar ik vond het zo goed gelukt dat ik dat niet wilde veranderen. Verder ben ik ook trots op de JavaScript omdat het niet mijn sterkste taal is.
+
+Wat beter had gekunt is de h1/h2 elementen in de form horen eigenlijk legends te zijn. h elementen werken blijkbaar niet in een form voor een screen reader. Dus kwa semantiek liggen er nog verbeteringen.
